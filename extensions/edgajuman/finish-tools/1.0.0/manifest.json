@@ -1,0 +1,65 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.finish-tools",
+  "name": "Finish Tools",
+  "author": "Edgajuman",
+  "version": "1.0.0",
+  "min_app": "2.3.0",
+  "description": "Grano de película y limpieza de fondo.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "finish",
+      "title": "Acabado",
+      "controls": [
+        {
+          "id": "grain",
+          "kind": "button",
+          "label": "Añadir grano",
+          "value": null,
+          "action": "grain"
+        },
+        {
+          "id": "unmult",
+          "kind": "button",
+          "label": "Eliminar fondo negro",
+          "value": null,
+          "action": "unmult"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "grain",
+      "title": "Grano",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "film_grain"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "unmult",
+      "title": "Eliminar fondo",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "unmult"
+          }
+        }
+      ],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_edit": true
+  },
+  "changelog": "Primera versión para AK Screen 2.3. Datos locales conservados al actualizar."
+}

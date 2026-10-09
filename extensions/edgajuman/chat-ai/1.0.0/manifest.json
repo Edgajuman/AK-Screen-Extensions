@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.chat-ai",
+  "name": "Chat AI",
+  "author": "Edgajuman",
+  "version": "1.0.0",
+  "min_app": "2.3.0",
+  "description": "Asistente de consulta con varios proveedores. Claves en el almacén local del sistema; historial conservado al actualizar. Resumen del proyecto y vista previa opcionales. No modifica el editor.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "chat",
+      "title": "Chat AI · Asistente",
+      "controls": [
+        {
+          "id": "provider",
+          "kind": "choice",
+          "label": "Proveedor",
+          "value": "OpenAI",
+          "options": [
+            "OpenAI",
+            "OpenRouter",
+            "Gemini",
+            "Claude",
+            "Grok"
+          ]
+        },
+        {
+          "id": "model",
+          "kind": "text",
+          "label": "ID de modelo (editable)",
+          "value": "gpt-4.1-mini"
+        },
+        {
+          "id": "context",
+          "kind": "checkbox",
+          "label": "Adjuntar resumen del proyecto (nombres, pistas y selección)",
+          "value": false
+        },
+        {
+          "id": "preview",
+          "kind": "checkbox",
+          "label": "Adjuntar imagen del fotograma actual",
+          "value": false
+        },
+        {
+          "id": "privacy",
+          "kind": "label",
+          "label": "Enviar comparte con el proveedor seleccionado tu pregunta, las últimas 20 respuestas y los adjuntos marcados. Las APIs pueden cobrar por el uso."
+        },
+        {
+          "id": "prompt",
+          "kind": "text",
+          "label": "Mensaje",
+          "value": "",
+          "multiline": true
+        },
+        {
+          "id": "send",
+          "kind": "button",
+          "label": "Enviar",
+          "action": "send"
+        },
+        {
+          "id": "history",
+          "kind": "text",
+          "label": "Historial local",
+          "value": "",
+          "multiline": true
+        },
+        {
+          "id": "clear",
+          "kind": "button",
+          "label": "Borrar conversación actual",
+          "action": "clear"
+        }
+      ]
+    },
+    {
+      "id": "keys",
+      "title": "Claves locales por proveedor",
+      "controls": [
+        {
+          "id": "key-openai",
+          "kind": "secret",
+          "label": "OpenAI · API key",
+          "value": {
+            "host": "api.openai.com"
+          }
+        },
+        {
+          "id": "key-openrouter",
+          "kind": "secret",
+          "label": "OpenRouter · API key",
+          "value": {
+            "host": "openrouter.ai"
+          }
+        },
+        {
+          "id": "key-gemini",
+          "kind": "secret",
+          "label": "Gemini · API key",
+          "value": {
+            "host": "generativelanguage.googleapis.com"
+          }
+        },
+        {
+          "id": "key-claude",
+          "kind": "secret",
+          "label": "Claude · API key",
+          "value": {
+            "host": "api.anthropic.com"
+          }
+        },
+        {
+          "id": "key-grok",
+          "kind": "secret",
+          "label": "Grok · API key",
+          "value": {
+            "host": "api.x.ai"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "send",
+      "title": "Consultar al asistente",
+      "shortcut": null,
+      "commands": [],
+      "requests": []
+    },
+    {
+      "id": "clear",
+      "title": "Borrar conversación",
+      "commands": [],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_read": true,
+    "network": [
+      "api.openai.com",
+      "openrouter.ai",
+      "generativelanguage.googleapis.com",
+      "api.anthropic.com",
+      "api.x.ai"
+    ]
+  },
+  "changelog": "Primera versión para AK Screen 2.3. Datos locales conservados al actualizar."
+}

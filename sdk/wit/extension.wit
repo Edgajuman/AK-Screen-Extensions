@@ -1,0 +1,6 @@
+package akscreen:extension@1.0.0;
+
+world extension {
+  export handle: func(request: string) -> string;
+  export render: func(width: u32, height: u32, pixels: list<f32>, params: string, time: s64) -> result<list<f32>, string>;
+}

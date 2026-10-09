@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.camera-tools",
+  "name": "Camera Tools",
+  "author": "Edgajuman",
+  "version": "1.0.0",
+  "min_app": "2.3.0",
+  "description": "Cámara compartida 2D/3D y presets.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "camera",
+      "title": "Camera Tools",
+      "controls": [
+        {
+          "id": "zoom",
+          "kind": "number",
+          "label": "Zoom (%)",
+          "value": 100,
+          "min": 1,
+          "max": 1000
+        },
+        {
+          "id": "apply",
+          "kind": "button",
+          "label": "Aplicar cámara 2D",
+          "value": null,
+          "action": "camera"
+        },
+        {
+          "id": "tilt",
+          "kind": "button",
+          "label": "Inclinar capa seleccionada",
+          "value": null,
+          "action": "tilt"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "camera",
+      "title": "Cámara 2D",
+      "commands": [
+        {
+          "id": "camera.set",
+          "params": {
+            "props": {
+              "mode": 0,
+              "zoom": "$ui.camera.zoom"
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "tilt",
+      "title": "Inclinar capa",
+      "commands": [
+        {
+          "id": "camera.layer",
+          "params": {
+            "props": {
+              "rot_x": 15,
+              "rot_y": -25,
+              "depth": 150
+            }
+          }
+        }
+      ],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_edit": true
+  },
+  "changelog": "Primera versión para AK Screen 2.3. Datos locales conservados al actualizar."
+}

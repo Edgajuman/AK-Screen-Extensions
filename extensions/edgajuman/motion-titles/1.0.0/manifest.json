@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.motion-titles",
+  "name": "Motion Titles",
+  "author": "Edgajuman",
+  "version": "1.0.0",
+  "min_app": "2.3.0",
+  "description": "Títulos con degradados, contorno y animación por caracteres.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "title",
+      "title": "Motion Titles",
+      "controls": [
+        {
+          "id": "text",
+          "kind": "text",
+          "label": "Texto",
+          "value": "Título"
+        },
+        {
+          "id": "size",
+          "kind": "number",
+          "label": "Tamaño",
+          "value": 100,
+          "min": 1,
+          "max": 2000
+        },
+        {
+          "id": "color",
+          "kind": "color",
+          "label": "Color",
+          "value": [
+            0.2,
+            0.55,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "create",
+          "kind": "button",
+          "label": "Crear título",
+          "value": null,
+          "action": "create"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "create",
+      "title": "Crear título",
+      "commands": [
+        {
+          "id": "graphics.newText",
+          "params": {
+            "text": "$ui.title.text",
+            "size": "$ui.title.size"
+          }
+        },
+        {
+          "id": "graphics.set",
+          "params": {
+            "props": {
+              "fill_color": "$ui.title.color",
+              "gradient_type": 1,
+              "stroke": true,
+              "stroke_width": 3,
+              "text_animation": 2,
+              "animation_auto": true,
+              "animation_duration": 1.2
+            }
+          }
+        }
+      ],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_edit": true
+  },
+  "changelog": "Primera versión para AK Screen 2.3. Datos locales conservados al actualizar."
+}

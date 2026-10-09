@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.tutorial-checklist",
+  "name": "Checklist de tutorial",
+  "author": "Edgajuman",
+  "version": "1.0.0",
+  "min_app": "2.3.0",
+  "description": "Preparación de tutoriales con estado persistente.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "checklist",
+      "title": "Preparación",
+      "controls": [
+        {
+          "id": "audio",
+          "kind": "checkbox",
+          "label": "Comprobar audio",
+          "value": false
+        },
+        {
+          "id": "cursor",
+          "kind": "checkbox",
+          "label": "Preparar cursor",
+          "value": false
+        },
+        {
+          "id": "private",
+          "kind": "checkbox",
+          "label": "Ocultar datos privados",
+          "value": false
+        },
+        {
+          "id": "script",
+          "kind": "checkbox",
+          "label": "Preparar pasos",
+          "value": false
+        },
+        {
+          "id": "preview",
+          "kind": "checkbox",
+          "label": "Revisar vista previa",
+          "value": false
+        }
+      ]
+    }
+  ],
+  "actions": [],
+  "permissions": {},
+  "changelog": "Primera versión para AK Screen 2.3. Datos locales conservados al actualizar."
+}
