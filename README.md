@@ -8,7 +8,7 @@ Widgets, herramientas y efectos creados por la comunidad para AK Screen 2.3. El 
 
 En el editor: **Herramientas → Extensiones → Actualizar catálogo**. Selecciona una versión, instala y revisa los permisos antes de activarla. También puedes importar un archivo `.akext`. Los paquetes locales no pueden reemplazar un ID verificado.
 
-Cada usuario guarda los paquetes en su carpeta personal de AK Screen, dentro de `Extensiones/packages/ID/versión/`. Sus notas, chats y ajustes se conservan aparte, en `Extensiones/data/ID/`, incluso al actualizar o desinstalar. Las claves de API se guardan en el almacén de credenciales del sistema operativo. No se incluyen claves en los paquetes.
+Cada usuario guarda los paquetes en su carpeta personal de AK Screen, dentro de `Extensiones/packages/ID/versión/`. Sus notas, chats y ajustes se conservan aparte, en `Extensiones/data/ID/`, incluso al actualizar o desinstalar. El borrado de datos es opcional y se confirma en el editor; afecta a todas las versiones de una misma extensión. Las claves de API se guardan en el almacén de credenciales del sistema operativo. No se incluyen claves en los paquetes.
 
 ## Colección inicial de Edgajuman
 
@@ -19,6 +19,7 @@ Cada usuario guarda los paquetes en su carpeta personal de AK Screen, dentro de 
 | Títulos de movimiento | Herramienta | Insertar textos con animación |
 | Cámara de composición | Herramienta | Ajustes de cámara 2D/3D |
 | Acabado | Herramienta | Presets de efectos |
+| WASM Lab | Widget y efecto | Contador persistente y acabado RGBA del SDK |
 | Chat AI | Asistente | OpenAI, OpenRouter, Gemini, Claude y Grok; claves propias y contexto opcional |
 
 Chat AI necesita conexión y una cuenta del proveedor elegido. Es un asistente de consulta: no ejecuta acciones en el editor. El resto de las extensiones iniciales no necesita red.
