@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.wasm-lab",
+  "name": "WASM Lab · Warm Grade",
+  "author": "Edgajuman",
+  "version": "1.0.0",
+  "min_app": "2.3.0",
+  "description": "Ejemplo real del SDK: contador persistente y efecto de temperatura RGBA. Parámetro JSON del efecto: {\"warmth\":0.08}.",
+  "license": "MIT",
+  "component": "component.wasm",
+  "permissions": {
+    "render": true
+  },
+  "files": [
+    {
+      "path": "component.wasm",
+      "size": 74589,
+      "sha256": "0966a278941e3e1f31afd14ddabb0eac7ff6fadece5ed221e86e268b4d878794"
+    }
+  ],
+  "widgets": [
+    {
+      "id": "counter",
+      "title": "Contador WASM",
+      "controls": [
+        {
+          "id": "count",
+          "kind": "label",
+          "label": "Contador persistente",
+          "value": "0"
+        },
+        {
+          "id": "increment",
+          "kind": "button",
+          "label": "+1",
+          "action": "increment"
+        }
+      ]
+    }
+  ],
+  "actions": [],
+  "changelog": "1.0.0: widget persistente y efecto de color, sin red ni imports del host."
+}
