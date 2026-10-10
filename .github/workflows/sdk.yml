@@ -1,14 +1,32 @@
 name: Build reviewed WebAssembly example
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: New immutable example version
+        required: true
+        default: '1.0.1'
+        type: string
 permissions:
   contents: write
 jobs:
   build:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    env:
+      SDK_VERSION: ${{ inputs.version }}
     steps:
       - uses: actions/checkout@v4
+      - name: Require a new version
+        run: |
+          python - <<'PY'
+          import os,pathlib,re
+          v=os.environ['SDK_VERSION']
+          if not re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',v) or len(v)>64:
+              raise SystemExit('Use a stable semantic version')
+          if pathlib.Path('extensions/edgajuman/wasm-lab',v).exists():
+              raise SystemExit('That version is immutable. Choose a new version.')
+          PY
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
@@ -24,9 +42,9 @@ jobs:
           rm -rf tools.tar.gz wasm-tools-1.261.0-x86_64-linux
       - name: Package native-import-free example
         run: |
-          mkdir -p extensions/edgajuman/wasm-lab/1.0.0
-          /tmp/wasm-tools component new sdk/target/wasm32-unknown-unknown/release/akscreen_component_example.wasm -o extensions/edgajuman/wasm-lab/1.0.0/component.wasm
-          /tmp/wasm-tools validate extensions/edgajuman/wasm-lab/1.0.0/component.wasm
+          mkdir -p "extensions/edgajuman/wasm-lab/$SDK_VERSION"
+          /tmp/wasm-tools component new sdk/target/wasm32-unknown-unknown/release/akscreen_component_example.wasm -o "extensions/edgajuman/wasm-lab/$SDK_VERSION/component.wasm"
+          /tmp/wasm-tools validate "extensions/edgajuman/wasm-lab/$SDK_VERSION/component.wasm"
           python scripts/sdk-manifest.py
       - name: Publish reviewed example sources and component
         run: |

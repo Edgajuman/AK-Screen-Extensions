@@ -17,6 +17,8 @@ Las operaciones de proyecto necesitan `project_edit` y pasan por una lista de co
 
 Publica actualizaciones manteniendo el ID y añadiendo una carpeta de versión SemVer nueva. Cada versión publicada es inmutable. AK Screen conserva notas, chats y ajustes en `Extensiones/data/ID`, realiza una copia antes de cambiar de versión y permite activar, desactivar o desinstalar cada paquete sin borrar esos datos. Los formatos de estado deben migrarse de forma compatible; una reversión no convierte automáticamente un esquema de datos creado por una versión posterior.
 
+Los paquetes admiten hasta 64 MB; cada componente binario tiene un límite de 8 MB antes de compilar. Los widgets usan controles nativos y pueden flotar o reintegrarse al panel de extensiones. No se ejecuta HTML, JavaScript ni código nativo externo.
+
 El aislamiento reduce el riesgo; no sustituye la revisión de código ni el mantenimiento del runtime. El catálogo oficial solo publica paquetes revisados y firmados.
 
 MIT · Edgajuman
