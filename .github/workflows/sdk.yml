@@ -1,0 +1,36 @@
+name: Build reviewed WebAssembly example
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - name: Build standalone community SDK
+        working-directory: sdk
+        run: cargo build --release --target wasm32-unknown-unknown
+      - name: Prepare pinned component tools
+        run: |
+          curl -fsSL https://github.com/bytecodealliance/wasm-tools/releases/download/v1.261.0/wasm-tools-1.261.0-x86_64-linux.tar.gz -o tools.tar.gz
+          echo 'ad62b2176037e93e1348cb65d6212d128ca9f097b63d155569f25215818ff7b1  tools.tar.gz' | sha256sum -c -
+          tar -xzf tools.tar.gz
+          mv wasm-tools-1.261.0-x86_64-linux/wasm-tools /tmp/wasm-tools
+          rm -rf tools.tar.gz wasm-tools-1.261.0-x86_64-linux
+      - name: Package native-import-free example
+        run: |
+          mkdir -p extensions/edgajuman/wasm-lab/1.0.0
+          /tmp/wasm-tools component new sdk/target/wasm32-unknown-unknown/release/akscreen_component_example.wasm -o extensions/edgajuman/wasm-lab/1.0.0/component.wasm
+          /tmp/wasm-tools validate extensions/edgajuman/wasm-lab/1.0.0/component.wasm
+          python scripts/sdk-manifest.py
+      - name: Publish reviewed example sources and component
+        run: |
+          git config user.name Edgajuman
+          git config user.email Edgajuman@users.noreply.github.com
+          git add extensions/edgajuman/wasm-lab sdk/Cargo.lock
+          if ! git diff --cached --quiet; then git commit -m 'Build versioned WASM widget and render example'; git push; fi
