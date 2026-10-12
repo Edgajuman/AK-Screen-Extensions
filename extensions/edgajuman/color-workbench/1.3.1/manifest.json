@@ -1,0 +1,324 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.color-workbench",
+  "name": "Color Workbench",
+  "author": "edgajuman",
+  "version": "1.3.1",
+  "min_app": "2.4.0",
+  "description": "Accesos de color y acabado visual no destructivo para la selección actual.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "cinema",
+      "title": "Look cinematográfico",
+      "controls": [
+        {
+          "id": "base",
+          "kind": "button",
+          "label": "Añadir corrección Lumetri",
+          "action": "lumetri"
+        },
+        {
+          "id": "vignette",
+          "kind": "button",
+          "label": "Añadir viñeta",
+          "action": "vignette"
+        },
+        {
+          "id": "grain",
+          "kind": "button",
+          "label": "Añadir grano de película",
+          "action": "grain"
+        },
+        {
+          "id": "cinema-stack",
+          "kind": "button",
+          "label": "Look completo · color + viñeta + grano",
+          "action": "cinema-stack"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "focus",
+      "title": "Lente y profundidad",
+      "controls": [
+        {
+          "id": "bokeh",
+          "kind": "button",
+          "label": "Desenfoque bokeh",
+          "action": "bokeh"
+        },
+        {
+          "id": "focus-blur",
+          "kind": "button",
+          "label": "Desenfoque de foco",
+          "action": "focus-blur"
+        },
+        {
+          "id": "glow",
+          "kind": "button",
+          "label": "Resplandor de altas luces",
+          "action": "glow"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "composite",
+      "title": "Composición y limpieza",
+      "controls": [
+        {
+          "id": "unmult",
+          "kind": "button",
+          "label": "Eliminar fondo negro/blanco",
+          "action": "unmult"
+        },
+        {
+          "id": "blur",
+          "kind": "button",
+          "label": "Desenfoque gaussiano",
+          "action": "blur"
+        },
+        {
+          "id": "channel-blur",
+          "kind": "button",
+          "label": "Desenfoque por canal RGB",
+          "action": "channel-blur"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "motion-finish",
+      "title": "Movimiento y textura",
+      "controls": [
+        {
+          "id": "motion-blur",
+          "kind": "button",
+          "label": "Desenfoque de movimiento",
+          "action": "motion-blur"
+        },
+        {
+          "id": "camera-shake",
+          "kind": "button",
+          "label": "Movimiento de cámara",
+          "action": "camera-shake"
+        },
+        {
+          "id": "film-stack",
+          "kind": "button",
+          "label": "Textura de película · grano + viñeta",
+          "action": "film-stack"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    }
+  ],
+  "actions": [
+    {
+      "id": "lumetri",
+      "title": "Lumetri",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "lumetri"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "vignette",
+      "title": "Viñeta",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "vignette"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "grain",
+      "title": "Grano de película",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "film_grain"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "cinema-stack",
+      "title": "Look cinematográfico",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "lumetri"
+          }
+        },
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "vignette"
+          }
+        },
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "film_grain"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "bokeh",
+      "title": "Bokeh",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "bokeh_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "focus-blur",
+      "title": "Desenfoque de foco",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "focus_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "glow",
+      "title": "Resplandor",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "wonder_glow"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "unmult",
+      "title": "Eliminar fondo",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "unmult"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "blur",
+      "title": "Desenfoque gaussiano",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "gaussian_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "channel-blur",
+      "title": "Desenfoque por canal",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "channel_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "motion-blur",
+      "title": "Desenfoque de movimiento",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "layer_motion_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "camera-shake",
+      "title": "Movimiento de cámara",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "camera_shake"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "film-stack",
+      "title": "Textura de película",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "film_grain"
+          }
+        },
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "vignette"
+          }
+        }
+      ],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_edit": true
+  },
+  "changelog": "1.3.1: autor corregido a @edgajuman; conserva el identificador, permisos y datos locales. AK Screen 2.4.0 revisada: estilos CSS por widget, panel / flotante, menú agrupado por extensión y versiones en catálogo. 1.0.0: cuatro widgets de corrección, look cinematográfico, profundidad óptica, composición y movimiento."
+}

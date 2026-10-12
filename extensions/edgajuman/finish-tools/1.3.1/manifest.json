@@ -1,0 +1,298 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.finish-tools",
+  "name": "Finish Tools",
+  "author": "edgajuman",
+  "version": "1.3.1",
+  "min_app": "2.4.0",
+  "description": "Grano de película y limpieza de fondo.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "finish",
+      "title": "Acabado",
+      "controls": [
+        {
+          "id": "grain",
+          "kind": "button",
+          "label": "Añadir grano",
+          "value": null,
+          "action": "grain"
+        },
+        {
+          "id": "unmult",
+          "kind": "button",
+          "label": "Eliminar fondo negro",
+          "value": null,
+          "action": "unmult"
+        },
+        {
+          "id": "blur",
+          "kind": "button",
+          "label": "Desenfoque suave",
+          "action": "blur"
+        },
+        {
+          "id": "glow",
+          "kind": "button",
+          "label": "Resplandor",
+          "action": "glow"
+        },
+        {
+          "id": "shake",
+          "kind": "button",
+          "label": "Movimiento de cámara",
+          "action": "shake"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "texture",
+      "title": "Textura y atmósfera",
+      "controls": [
+        {
+          "id": "vignette",
+          "kind": "button",
+          "label": "Viñeta cinematográfica",
+          "action": "vignette"
+        },
+        {
+          "id": "bokeh",
+          "kind": "button",
+          "label": "Desenfoque bokeh",
+          "action": "bokeh"
+        },
+        {
+          "id": "motion-blur",
+          "kind": "button",
+          "label": "Desenfoque de movimiento",
+          "action": "motion-blur"
+        },
+        {
+          "id": "channel-blur",
+          "kind": "button",
+          "label": "Desenfoque selectivo RGB",
+          "action": "channel-blur"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "dialogue-quick",
+      "title": "Audio · diálogo",
+      "controls": [
+        {
+          "id": "denoise",
+          "kind": "button",
+          "label": "Reducción de ruido",
+          "action": "denoise"
+        },
+        {
+          "id": "dehum",
+          "kind": "button",
+          "label": "Reducción de zumbido",
+          "action": "dehum"
+        },
+        {
+          "id": "deess",
+          "kind": "button",
+          "label": "Control de sibilancias",
+          "action": "deess"
+        },
+        {
+          "id": "limiter",
+          "kind": "button",
+          "label": "Limitador de picos",
+          "action": "limiter"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    }
+  ],
+  "actions": [
+    {
+      "id": "grain",
+      "title": "Grano",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "film_grain"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "unmult",
+      "title": "Eliminar fondo",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "unmult"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "blur",
+      "title": "Desenfoque suave",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "gaussian_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "glow",
+      "title": "Resplandor",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "wonder_glow"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "shake",
+      "title": "Movimiento de cámara",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "camera_shake"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "vignette",
+      "title": "Viñeta",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "vignette"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "bokeh",
+      "title": "Bokeh",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "bokeh_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "motion-blur",
+      "title": "Desenfoque de movimiento",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "layer_motion_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "channel-blur",
+      "title": "Desenfoque RGB",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "channel_blur"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "denoise",
+      "title": "Reducción de ruido",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "denoise"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "dehum",
+      "title": "Reducción de zumbido",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "dehummer"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "deess",
+      "title": "Control de sibilancias",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "deesser"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "limiter",
+      "title": "Limitador de picos",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "hard_limiter"
+          }
+        }
+      ],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_edit": true
+  },
+  "changelog": "1.3.1: autor corregido a @edgajuman; conserva el identificador, permisos y datos locales. AK Screen 2.4.0 revisada: estilos CSS por widget, panel / flotante, menú agrupado por extensión y versiones en catálogo. 1.2.0: añade utilidades visuales de viñeta, bokeh y desenfoque de movimiento, además de herramientas rápidas para diálogo."
+}

@@ -4,7 +4,7 @@ Widgets y herramientas para AK Screen 2.4.0, con versiones revisadas y catálogo
 
 [**Catálogo web →**](https://edgajuman.github.io/AK-Screen-Extensions/) · [SDK](sdk/README.md) · [Descargas](https://github.com/Edgajuman/AKScreen-Downloads/releases/tag/ak-v2.4.0)
 
-## Colección de dehuman · 1.3.0
+## Colección de edgajuman · 1.3.1
 
 ### Audio Workbench
 
@@ -12,7 +12,7 @@ Widgets y herramientas para AK Screen 2.4.0, con versiones revisadas y catálogo
 
 Widgets rápidos para limpiar voz, controlar dinámica y preparar música desde la selección actual.
 
-[Ejemplos y componentes](extensions/dehuman/audio-workbench/1.3.0/EXAMPLE.md) · 4 widgets · 16 acciones.
+[Ejemplos y componentes](extensions/edgajuman/audio-workbench/1.3.1/EXAMPLE.md) · 4 widgets · 16 acciones.
 
 ### Brand Titles
 
@@ -20,7 +20,7 @@ Widgets rápidos para limpiar voz, controlar dinámica y preparar música desde 
 
 Títulos de marca con degradados, contorno, fondo, fuente y entrada animada. Crea capas de texto editables sin descargar medios.
 
-[Ejemplos y componentes](extensions/dehuman/brand-titles/1.3.0/EXAMPLE.md) · 1 widgets · 1 acciones.
+[Ejemplos y componentes](extensions/edgajuman/brand-titles/1.3.1/EXAMPLE.md) · 1 widgets · 1 acciones.
 
 ### Camera Tools
 
@@ -28,7 +28,7 @@ Títulos de marca con degradados, contorno, fondo, fuente y entrada animada. Cre
 
 Cámara compartida 2D/3D y presets.
 
-[Ejemplos y componentes](extensions/dehuman/camera-tools/1.3.0/EXAMPLE.md) · 5 widgets · 9 acciones.
+[Ejemplos y componentes](extensions/edgajuman/camera-tools/1.3.1/EXAMPLE.md) · 5 widgets · 9 acciones.
 
 ### Chart Atelier
 
@@ -36,7 +36,7 @@ Cámara compartida 2D/3D y presets.
 
 Crea comparaciones animadas con barras, líneas, anillos y gráficos circulares. Colores, duración, valores y contornos editables; todas las capas quedan en la timeline.
 
-[Ejemplos y componentes](extensions/dehuman/chart-atelier/1.3.0/EXAMPLE.md) · 1 widgets · 1 acciones.
+[Ejemplos y componentes](extensions/edgajuman/chart-atelier/1.3.1/EXAMPLE.md) · 1 widgets · 1 acciones.
 
 ### Chat AI
 
@@ -44,7 +44,7 @@ Crea comparaciones animadas con barras, líneas, anillos y gráficos circulares.
 
 Asistente de consulta con varios proveedores. Claves en el almacén local del sistema; historial conservado al actualizar. Resumen del proyecto y vista previa opcionales. No modifica el editor.
 
-[Ejemplos y componentes](extensions/dehuman/chat-ai/1.3.0/EXAMPLE.md) · 2 widgets · 2 acciones.
+[Ejemplos y componentes](extensions/edgajuman/chat-ai/1.3.1/EXAMPLE.md) · 2 widgets · 2 acciones.
 
 ### Color Workbench
 
@@ -52,7 +52,7 @@ Asistente de consulta con varios proveedores. Claves en el almacén local del si
 
 Accesos de color y acabado visual no destructivo para la selección actual.
 
-[Ejemplos y componentes](extensions/dehuman/color-workbench/1.3.0/EXAMPLE.md) · 4 widgets · 13 acciones.
+[Ejemplos y componentes](extensions/edgajuman/color-workbench/1.3.1/EXAMPLE.md) · 4 widgets · 13 acciones.
 
 ### Delivery Checklist
 
@@ -60,7 +60,7 @@ Accesos de color y acabado visual no destructivo para la selección actual.
 
 Control de entrega persistente: imagen, sonido, subtítulos, créditos, licencias y revisiones. Flota el checklist mientras revisas el programa.
 
-[Ejemplos y componentes](extensions/dehuman/delivery-checklist/1.3.0/EXAMPLE.md) · 2 widgets · 0 acciones.
+[Ejemplos y componentes](extensions/edgajuman/delivery-checklist/1.3.1/EXAMPLE.md) · 2 widgets · 0 acciones.
 
 ### Finish Tools
 
@@ -68,7 +68,7 @@ Control de entrega persistente: imagen, sonido, subtítulos, créditos, licencia
 
 Grano de película y limpieza de fondo.
 
-[Ejemplos y componentes](extensions/dehuman/finish-tools/1.3.0/EXAMPLE.md) · 3 widgets · 13 acciones.
+[Ejemplos y componentes](extensions/edgajuman/finish-tools/1.3.1/EXAMPLE.md) · 3 widgets · 13 acciones.
 
 ### Motion Kit
 
@@ -76,7 +76,7 @@ Grano de película y limpieza de fondo.
 
 Presets editables para capas 3D, cámara de composición, rótulos y acabados de movimiento.
 
-[Ejemplos y componentes](extensions/dehuman/motion-kit/1.3.0/EXAMPLE.md) · 4 widgets · 10 acciones.
+[Ejemplos y componentes](extensions/edgajuman/motion-kit/1.3.1/EXAMPLE.md) · 4 widgets · 10 acciones.
 
 ### Motion Titles
 
@@ -84,7 +84,7 @@ Presets editables para capas 3D, cámara de composición, rótulos y acabados de
 
 Títulos con degradados, contorno y animación por caracteres.
 
-[Ejemplos y componentes](extensions/dehuman/motion-titles/1.3.0/EXAMPLE.md) · 4 widgets · 6 acciones.
+[Ejemplos y componentes](extensions/edgajuman/motion-titles/1.3.1/EXAMPLE.md) · 4 widgets · 6 acciones.
 
 ### Notas de edición
 
@@ -92,7 +92,7 @@ Títulos con degradados, contorno y animación por caracteres.
 
 Notas persistentes, sin conexión ni permisos de proyecto.
 
-[Ejemplos y componentes](extensions/dehuman/notes/1.3.0/EXAMPLE.md) · 4 widgets · 0 acciones.
+[Ejemplos y componentes](extensions/edgajuman/notes/1.3.1/EXAMPLE.md) · 4 widgets · 0 acciones.
 
 ### Checklist de tutorial
 
@@ -100,7 +100,7 @@ Notas persistentes, sin conexión ni permisos de proyecto.
 
 Preparación de tutoriales con estado persistente.
 
-[Ejemplos y componentes](extensions/dehuman/tutorial-checklist/1.3.0/EXAMPLE.md) · 3 widgets · 0 acciones.
+[Ejemplos y componentes](extensions/edgajuman/tutorial-checklist/1.3.1/EXAMPLE.md) · 3 widgets · 0 acciones.
 
 ## Instalar
 
@@ -139,3 +139,5 @@ El catálogo conserva versiones anteriores para poder elegirlas. Las actualizaci
 Una versión insegura puede retirarse mediante `revoked.json`, usando `ID@versión`. Los usuarios recibirán su desactivación al consultar el catálogo. Para reportar un problema sin publicar detalles de explotación, utiliza un aviso privado de seguridad en GitHub.
 
 MIT · Edgajuman
+
+Las versiones históricas firmadas se conservan intactas. La versión 1.3.1 corrige la atribución a @edgajuman sin cambiar los identificadores ni borrar datos locales.
