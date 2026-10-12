@@ -1,8 +1,106 @@
 # AK Screen · Extensiones
 
-Widgets, herramientas y efectos creados por la comunidad para AK Screen 2.3. El catálogo publica **versiones revisadas y firmadas**. El código del editor permanece privado.
+Widgets y herramientas para AK Screen 2.4.0, con versiones revisadas y catálogo firmado.
 
-**[Explorar catálogo](https://edgajuman.github.io/AK-Screen-Extensions/)** · [Descargas](https://github.com/Edgajuman/AKScreen-Downloads/releases) · [Temas](https://github.com/Edgajuman/AK-Screen-Themes)
+[**Catálogo web →**](https://edgajuman.github.io/AK-Screen-Extensions/) · [SDK](sdk/README.md) · [Descargas](https://github.com/Edgajuman/AKScreen-Downloads/releases/tag/ak-v2.4.0)
+
+## Colección de dehuman · 1.3.0
+
+### Audio Workbench
+
+![Vista ilustrativa de Audio Workbench](https://edgajuman.github.io/AK-Screen-Extensions/previews/audio-workbench.png)
+
+Widgets rápidos para limpiar voz, controlar dinámica y preparar música desde la selección actual.
+
+[Ejemplos y componentes](extensions/dehuman/audio-workbench/1.3.0/EXAMPLE.md) · 4 widgets · 16 acciones.
+
+### Brand Titles
+
+![Vista ilustrativa de Brand Titles](https://edgajuman.github.io/AK-Screen-Extensions/previews/brand-titles.png)
+
+Títulos de marca con degradados, contorno, fondo, fuente y entrada animada. Crea capas de texto editables sin descargar medios.
+
+[Ejemplos y componentes](extensions/dehuman/brand-titles/1.3.0/EXAMPLE.md) · 1 widgets · 1 acciones.
+
+### Camera Tools
+
+![Vista ilustrativa de Camera Tools](https://edgajuman.github.io/AK-Screen-Extensions/previews/camera-tools.png)
+
+Cámara compartida 2D/3D y presets.
+
+[Ejemplos y componentes](extensions/dehuman/camera-tools/1.3.0/EXAMPLE.md) · 5 widgets · 9 acciones.
+
+### Chart Atelier
+
+![Vista ilustrativa de Chart Atelier](https://edgajuman.github.io/AK-Screen-Extensions/previews/chart-atelier.png)
+
+Crea comparaciones animadas con barras, líneas, anillos y gráficos circulares. Colores, duración, valores y contornos editables; todas las capas quedan en la timeline.
+
+[Ejemplos y componentes](extensions/dehuman/chart-atelier/1.3.0/EXAMPLE.md) · 1 widgets · 1 acciones.
+
+### Chat AI
+
+![Vista ilustrativa de Chat AI](https://edgajuman.github.io/AK-Screen-Extensions/previews/chat-ai.png)
+
+Asistente de consulta con varios proveedores. Claves en el almacén local del sistema; historial conservado al actualizar. Resumen del proyecto y vista previa opcionales. No modifica el editor.
+
+[Ejemplos y componentes](extensions/dehuman/chat-ai/1.3.0/EXAMPLE.md) · 2 widgets · 2 acciones.
+
+### Color Workbench
+
+![Vista ilustrativa de Color Workbench](https://edgajuman.github.io/AK-Screen-Extensions/previews/color-workbench.png)
+
+Accesos de color y acabado visual no destructivo para la selección actual.
+
+[Ejemplos y componentes](extensions/dehuman/color-workbench/1.3.0/EXAMPLE.md) · 4 widgets · 13 acciones.
+
+### Delivery Checklist
+
+![Vista ilustrativa de Delivery Checklist](https://edgajuman.github.io/AK-Screen-Extensions/previews/delivery-checklist.png)
+
+Control de entrega persistente: imagen, sonido, subtítulos, créditos, licencias y revisiones. Flota el checklist mientras revisas el programa.
+
+[Ejemplos y componentes](extensions/dehuman/delivery-checklist/1.3.0/EXAMPLE.md) · 2 widgets · 0 acciones.
+
+### Finish Tools
+
+![Vista ilustrativa de Finish Tools](https://edgajuman.github.io/AK-Screen-Extensions/previews/finish-tools.png)
+
+Grano de película y limpieza de fondo.
+
+[Ejemplos y componentes](extensions/dehuman/finish-tools/1.3.0/EXAMPLE.md) · 3 widgets · 13 acciones.
+
+### Motion Kit
+
+![Vista ilustrativa de Motion Kit](https://edgajuman.github.io/AK-Screen-Extensions/previews/motion-kit.png)
+
+Presets editables para capas 3D, cámara de composición, rótulos y acabados de movimiento.
+
+[Ejemplos y componentes](extensions/dehuman/motion-kit/1.3.0/EXAMPLE.md) · 4 widgets · 10 acciones.
+
+### Motion Titles
+
+![Vista ilustrativa de Motion Titles](https://edgajuman.github.io/AK-Screen-Extensions/previews/motion-titles.png)
+
+Títulos con degradados, contorno y animación por caracteres.
+
+[Ejemplos y componentes](extensions/dehuman/motion-titles/1.3.0/EXAMPLE.md) · 4 widgets · 6 acciones.
+
+### Notas de edición
+
+![Vista ilustrativa de Notas de edición](https://edgajuman.github.io/AK-Screen-Extensions/previews/notes.png)
+
+Notas persistentes, sin conexión ni permisos de proyecto.
+
+[Ejemplos y componentes](extensions/dehuman/notes/1.3.0/EXAMPLE.md) · 4 widgets · 0 acciones.
+
+### Checklist de tutorial
+
+![Vista ilustrativa de Checklist de tutorial](https://edgajuman.github.io/AK-Screen-Extensions/previews/tutorial-checklist.png)
+
+Preparación de tutoriales con estado persistente.
+
+[Ejemplos y componentes](extensions/dehuman/tutorial-checklist/1.3.0/EXAMPLE.md) · 3 widgets · 0 acciones.
 
 ## Instalar
 

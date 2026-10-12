@@ -1,0 +1,381 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.audio-workbench",
+  "name": "Audio Workbench",
+  "author": "dehuman",
+  "version": "1.3.0",
+  "min_app": "2.4.0",
+  "description": "Widgets rápidos para limpiar voz, controlar dinámica y preparar música desde la selección actual.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "dialogue",
+      "title": "Diálogo · limpieza",
+      "controls": [
+        {
+          "id": "cleanup",
+          "kind": "button",
+          "label": "Limpiar diálogo",
+          "action": "cleanup"
+        },
+        {
+          "id": "dehum",
+          "kind": "button",
+          "label": "Reducir zumbido eléctrico",
+          "action": "dehum"
+        },
+        {
+          "id": "denoise",
+          "kind": "button",
+          "label": "Reducir ruido de fondo",
+          "action": "denoise"
+        },
+        {
+          "id": "dereverb",
+          "kind": "button",
+          "label": "Reducir reverberación",
+          "action": "dereverb"
+        },
+        {
+          "id": "declick",
+          "kind": "button",
+          "label": "Quitar clics",
+          "action": "declick"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "voice",
+      "title": "Voz · presencia y nivel",
+      "controls": [
+        {
+          "id": "presence",
+          "kind": "button",
+          "label": "Realzar inteligibilidad",
+          "action": "presence"
+        },
+        {
+          "id": "compress",
+          "kind": "button",
+          "label": "Controlar dinámica",
+          "action": "compress"
+        },
+        {
+          "id": "deess",
+          "kind": "button",
+          "label": "Suavizar sibilancias",
+          "action": "deess"
+        },
+        {
+          "id": "limit",
+          "kind": "button",
+          "label": "Limitar picos",
+          "action": "limit"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "music",
+      "title": "Música · mezcla rápida",
+      "controls": [
+        {
+          "id": "music-dynamics",
+          "kind": "button",
+          "label": "Control de dinámica",
+          "action": "compress"
+        },
+        {
+          "id": "equalizer",
+          "kind": "button",
+          "label": "Añadir ecualizador gráfico",
+          "action": "equalizer"
+        },
+        {
+          "id": "stereo",
+          "kind": "button",
+          "label": "Ampliar imagen estéreo",
+          "action": "stereo"
+        },
+        {
+          "id": "space",
+          "kind": "button",
+          "label": "Añadir espacio",
+          "action": "space"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "repair",
+      "title": "Audio · reparación de canales",
+      "controls": [
+        {
+          "id": "swap",
+          "kind": "button",
+          "label": "Intercambiar canales L/R",
+          "action": "swap"
+        },
+        {
+          "id": "fill-left",
+          "kind": "button",
+          "label": "Duplicar canal izquierdo",
+          "action": "fill-left"
+        },
+        {
+          "id": "fill-right",
+          "kind": "button",
+          "label": "Duplicar canal derecho",
+          "action": "fill-right"
+        },
+        {
+          "id": "invert",
+          "kind": "button",
+          "label": "Invertir polaridad",
+          "action": "invert"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    }
+  ],
+  "actions": [
+    {
+      "id": "cleanup",
+      "title": "Limpieza de diálogo",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "highpass"
+          }
+        },
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "denoise"
+          }
+        },
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "deesser"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "dehum",
+      "title": "Reducir zumbido",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "dehummer"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "denoise",
+      "title": "Reducir ruido",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "denoise"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "dereverb",
+      "title": "Reducir reverberación",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "dereverb"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "declick",
+      "title": "Eliminar clics",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "declicker"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "presence",
+      "title": "Realzar voz",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "vocal_enhancer"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "compress",
+      "title": "Control de dinámica",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "single_band_compressor"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "deess",
+      "title": "Suavizar sibilancias",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "deesser"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "limit",
+      "title": "Limitar picos",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "hard_limiter"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "equalizer",
+      "title": "Ecualizador gráfico",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "graphic_eq"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "stereo",
+      "title": "Imagen estéreo",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "stereo_expander"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "space",
+      "title": "Espacio",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "studio_reverb"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "swap",
+      "title": "Intercambiar canales",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "swap_channels"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "fill-left",
+      "title": "Duplicar canal izquierdo",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "fill_left"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "fill-right",
+      "title": "Duplicar canal derecho",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "fill_right"
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "invert",
+      "title": "Invertir polaridad",
+      "commands": [
+        {
+          "id": "effects.apply",
+          "params": {
+            "effect": "invert_a"
+          }
+        }
+      ],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_edit": true
+  },
+  "changelog": "AK Screen 2.4.0 revisada: estilos CSS por widget, panel / flotante, menú agrupado por extensión y versiones en catálogo. 1.0.0: cuatro widgets para limpiar diálogo, realzar voz, equilibrar música y reparar canales estéreo."
+}

@@ -1,0 +1,336 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.camera-tools",
+  "name": "Camera Tools",
+  "author": "dehuman",
+  "version": "1.3.0",
+  "min_app": "2.4.0",
+  "description": "Cámara compartida 2D/3D y presets.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "camera",
+      "title": "Camera Tools",
+      "controls": [
+        {
+          "id": "zoom",
+          "kind": "number",
+          "label": "Zoom (%)",
+          "value": 100,
+          "min": 1,
+          "max": 1000
+        },
+        {
+          "id": "apply",
+          "kind": "button",
+          "label": "Aplicar cámara 2D",
+          "value": null,
+          "action": "camera"
+        },
+        {
+          "id": "tilt",
+          "kind": "button",
+          "label": "Inclinar capa seleccionada",
+          "value": null,
+          "action": "tilt"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "camera3d",
+      "title": "Cámara 3D · composición",
+      "controls": [
+        {
+          "id": "focal",
+          "kind": "number",
+          "label": "Distancia focal",
+          "value": 1600,
+          "min": 100,
+          "max": 10000
+        },
+        {
+          "id": "create",
+          "kind": "button",
+          "label": "Activar cámara 3D",
+          "action": "camera3d"
+        },
+        {
+          "id": "reset",
+          "kind": "button",
+          "label": "Restablecer cámara",
+          "action": "reset"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "layer-presets",
+      "title": "Presets de plano",
+      "controls": [
+        {
+          "id": "orbit",
+          "kind": "button",
+          "label": "Órbita suave",
+          "action": "orbit"
+        },
+        {
+          "id": "front",
+          "kind": "button",
+          "label": "Vista frontal",
+          "action": "front"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "custom-depth",
+      "title": "Parallax · ajuste manual",
+      "controls": [
+        {
+          "id": "depth",
+          "kind": "number",
+          "label": "Profundidad Z (px)",
+          "value": 180,
+          "min": -5000,
+          "max": 5000
+        },
+        {
+          "id": "x",
+          "kind": "number",
+          "label": "Rotación X (°)",
+          "value": 12,
+          "min": -180,
+          "max": 180
+        },
+        {
+          "id": "y",
+          "kind": "number",
+          "label": "Rotación Y (°)",
+          "value": -20,
+          "min": -180,
+          "max": 180
+        },
+        {
+          "id": "apply",
+          "kind": "button",
+          "label": "Aplicar a capa seleccionada",
+          "action": "custom-layer"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    },
+    {
+      "id": "camera-views",
+      "title": "Vistas rápidas de cámara",
+      "controls": [
+        {
+          "id": "top",
+          "kind": "button",
+          "label": "Vista superior",
+          "action": "top"
+        },
+        {
+          "id": "reverse",
+          "kind": "button",
+          "label": "Órbita inversa",
+          "action": "reverse"
+        },
+        {
+          "id": "front",
+          "kind": "button",
+          "label": "Vista frontal",
+          "action": "front"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    }
+  ],
+  "actions": [
+    {
+      "id": "camera",
+      "title": "Cámara 2D",
+      "commands": [
+        {
+          "id": "camera.set",
+          "params": {
+            "props": {
+              "mode": 0,
+              "zoom": "$ui.camera.zoom"
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "tilt",
+      "title": "Inclinar capa",
+      "commands": [
+        {
+          "id": "camera.layer",
+          "params": {
+            "props": {
+              "rot_x": 15,
+              "rot_y": -25,
+              "depth": 150
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "camera3d",
+      "title": "Activar cámara 3D",
+      "commands": [
+        {
+          "id": "camera.set",
+          "params": {
+            "props": {
+              "mode": 1,
+              "focal": "$ui.camera3d.focal",
+              "zoom": 100,
+              "projection": 0
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "reset",
+      "title": "Restablecer cámara",
+      "commands": [
+        {
+          "id": "camera.set",
+          "params": {
+            "props": {
+              "mode": 0,
+              "position": [
+                0,
+                0
+              ],
+              "z": 0,
+              "zoom": 100,
+              "rot_x": 0,
+              "rot_y": 0,
+              "rot_z": 0
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "orbit",
+      "title": "Órbita suave",
+      "commands": [
+        {
+          "id": "camera.layer",
+          "params": {
+            "props": {
+              "rot_x": 12,
+              "rot_y": -20,
+              "rot_z": 0,
+              "depth": 180
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "front",
+      "title": "Vista frontal",
+      "commands": [
+        {
+          "id": "camera.layer",
+          "params": {
+            "props": {
+              "rot_x": 0,
+              "rot_y": 0,
+              "rot_z": 0,
+              "depth": 0
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "custom-layer",
+      "title": "Ajustar profundidad y giro",
+      "commands": [
+        {
+          "id": "camera.layer",
+          "params": {
+            "props": {
+              "rot_x": "$ui.custom-depth.x",
+              "rot_y": "$ui.custom-depth.y",
+              "rot_z": 0,
+              "depth": "$ui.custom-depth.depth"
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "top",
+      "title": "Vista superior",
+      "commands": [
+        {
+          "id": "camera.layer",
+          "params": {
+            "props": {
+              "rot_x": 90,
+              "rot_y": 0,
+              "rot_z": 0,
+              "depth": 180
+            }
+          }
+        }
+      ],
+      "requests": []
+    },
+    {
+      "id": "reverse",
+      "title": "Órbita inversa",
+      "commands": [
+        {
+          "id": "camera.layer",
+          "params": {
+            "props": {
+              "rot_x": -12,
+              "rot_y": 20,
+              "rot_z": 0,
+              "depth": 180
+            }
+          }
+        }
+      ],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_edit": true
+  },
+  "changelog": "AK Screen 2.4.0 revisada: estilos CSS por widget, panel / flotante, menú agrupado por extensión y versiones en catálogo. 1.2.0: añade controles numéricos de profundidad y giro 3D, además de presets frontal, superior y órbita inversa."
+}

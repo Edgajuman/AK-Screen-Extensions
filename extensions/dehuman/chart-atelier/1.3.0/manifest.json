@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "sdk": 1,
+  "id": "edgajuman.chart-atelier",
+  "name": "Chart Atelier",
+  "author": "dehuman",
+  "version": "1.3.0",
+  "min_app": "2.4.0",
+  "description": "Crea comparaciones animadas con barras, líneas, anillos y gráficos circulares. Colores, duración, valores y contornos editables; todas las capas quedan en la timeline.",
+  "license": "MIT",
+  "widgets": [
+    {
+      "id": "chart",
+      "title": "Chart Atelier · Comparación",
+      "controls": [
+        {
+          "id": "title",
+          "kind": "text",
+          "label": "Título",
+          "value": "Ventas por año"
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "label": "Subtítulo",
+          "value": "Comparación anual"
+        },
+        {
+          "id": "kind",
+          "kind": "choice",
+          "label": "Tipo",
+          "value": "bars",
+          "options": [
+            "bars",
+            "horizontalBars",
+            "line",
+            "pie",
+            "donut",
+            "timeline"
+          ]
+        },
+        {
+          "id": "label1",
+          "kind": "text",
+          "label": "Etiqueta A",
+          "value": "2025"
+        },
+        {
+          "id": "value1",
+          "kind": "number",
+          "label": "Valor A",
+          "value": 50,
+          "min": 0,
+          "max": 1000000000.0
+        },
+        {
+          "id": "color1",
+          "kind": "color",
+          "label": "Color A",
+          "value": [
+            0.24,
+            0.6,
+            1,
+            1
+          ]
+        },
+        {
+          "id": "label2",
+          "kind": "text",
+          "label": "Etiqueta B",
+          "value": "2026"
+        },
+        {
+          "id": "value2",
+          "kind": "number",
+          "label": "Valor B",
+          "value": 80,
+          "min": 0,
+          "max": 1000000000.0
+        },
+        {
+          "id": "color2",
+          "kind": "color",
+          "label": "Color B",
+          "value": [
+            0.2,
+            0.85,
+            0.65,
+            1
+          ]
+        },
+        {
+          "id": "animate",
+          "kind": "checkbox",
+          "label": "Entrada animada",
+          "value": true
+        },
+        {
+          "id": "duration",
+          "kind": "number",
+          "label": "Duración del clip (s)",
+          "value": 6,
+          "min": 0.5,
+          "max": 120
+        },
+        {
+          "id": "speed",
+          "kind": "number",
+          "label": "Entrada suave (s)",
+          "value": 1.2,
+          "min": 0.05,
+          "max": 5
+        },
+        {
+          "id": "stagger",
+          "kind": "number",
+          "label": "Separación (s)",
+          "value": 0.16,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "id": "outline",
+          "kind": "number",
+          "label": "Contorno (px)",
+          "value": 0,
+          "min": 0,
+          "max": 40
+        },
+        {
+          "id": "create",
+          "kind": "button",
+          "label": "Añadir gráfico a la timeline",
+          "value": null,
+          "action": "create"
+        }
+      ],
+      "surface": "both",
+      "floating_theme": true,
+      "layout": "controls",
+      "css": ".widget { background-color: var(--panel); padding: 12px; border-radius: 12px; gap: 8px; } .widget-title { color: var(--accent); font-size: 16px; } .input { background-color: var(--field); border-color: var(--border); border-radius: 8px; } .button { background-color: var(--accent); border-radius: 8px; padding: 6px; } .control { padding: 4px; }"
+    }
+  ],
+  "actions": [
+    {
+      "id": "create",
+      "title": "Crear gráfico animado",
+      "commands": [
+        {
+          "id": "graphics.chart",
+          "params": {
+            "chart": {
+              "title": "$ui.chart.title",
+              "subtitle": "$ui.chart.subtitle",
+              "kind": "$ui.chart.kind",
+              "duration": "$ui.chart.duration",
+              "animated": "$ui.chart.animate",
+              "animation_seconds": "$ui.chart.speed",
+              "stagger": "$ui.chart.stagger",
+              "outline_width": "$ui.chart.outline",
+              "data": [
+                {
+                  "label": "$ui.chart.label1",
+                  "value": "$ui.chart.value1",
+                  "color": "$ui.chart.color1"
+                },
+                {
+                  "label": "$ui.chart.label2",
+                  "value": "$ui.chart.value2",
+                  "color": "$ui.chart.color2"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "requests": []
+    }
+  ],
+  "permissions": {
+    "project_read": false,
+    "project_edit": true,
+    "render": false,
+    "network": []
+  },
+  "files": [],
+  "changelog": "AK Screen 2.4.0 revisada: estilos CSS por widget, panel / flotante, menú agrupado por extensión y versiones en catálogo. 2.4.0: widgets nativos, estilos CSS aislados, uso en panel o ventana flotante, datos conservados entre versiones."
+}
